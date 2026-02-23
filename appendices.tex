@@ -110,6 +110,7 @@ The complete NepTube database consists of 29 PostgreSQL tables managed through D
 \end{itemize}
 
 \subsection*{B.5 AI and Moderation Tables}
+\enlargethispage{3\baselineskip}
 \begin{itemize}[noitemsep]
   \item \textbf{ai\_features} --- Stores generated content per video (summary, chapters, tags, SEO, flashcards, quiz, timestamps, content DNA, viral score, revenue prediction).
   \item \textbf{video\_reports} --- User-submitted reports with category, description, and resolution status.
@@ -127,6 +128,7 @@ The complete NepTube database consists of 29 PostgreSQL tables managed through D
   \item \textbf{user\_feedback} --- Platform-wide feedback collection with category and priority fields.
   \item \textbf{video\_feedback} --- Per-video quality and content feedback from viewers.
 \end{itemize}
+\nopagebreak[4]
 
 
 %========================================================================
@@ -249,7 +251,7 @@ reports & 4 & Submit, list, resolve, statistics \\
 {\small
 \begin{itemize}[noitemsep]
   \item \texttt{POST /api/webhooks} --- Clerk/Svix webhook handler for user synchronization
-  \item \texttt{POST /api/uploadthing} --- UploadThing file upload handler (video, thumbnail, image)
+  \item \texttt{POST /api/uploadthing} --- UploadThing file upload handler (video, thumbnail, and image)
   \item \texttt{GET /api/trpc/*} --- tRPC HTTP handler (query operations)
   \item \texttt{POST /api/trpc/*} --- tRPC HTTP handler (mutation operations)
   \item \texttt{GET /api/videos/[id]/stream} --- Video streaming with range request support

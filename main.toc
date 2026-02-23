@@ -33,43 +33,43 @@
 \contentsline {chapter}{\numberline {3}System Design}{14}{chapter.3}%
 \contentsline {section}{\numberline {3.1}System Description}{14}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Flowchart}{14}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}User's Flowchart}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Creator's Flowchart}{18}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Use Case Diagram}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}User's Use Case Diagram}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Creator's Use Case Diagram}{21}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Admin's Use Case Diagram}{22}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Sequence Diagram}{22}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}User's Sequence Diagram}{23}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Admin's Sequence Diagram}{24}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Creator's Sequence Diagram}{25}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}System Architecture}{26}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Entity Relationship (ER) Diagram}{27}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Data Flow Diagram}{28}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Technology Stack}{30}{section.3.8}%
-\contentsline {chapter}{\numberline {4}Implementation and Discussion}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Methodology}{31}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Implementation Steps}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Output Obtained}{32}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Admin Features}{32}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Creator Features}{32}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}User Features}{32}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Test Cases}{33}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Application Screenshots}{34}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Home Page and Video Browsing}{34}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Video Player Interface}{35}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Creator Dashboard}{35}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Admin Dashboard}{36}{subsection.4.5.4}%
-\contentsline {chapter}{\numberline {5}Analysis and Evaluation}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Data Analysis}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Results}{37}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}User Features Delivered}{37}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Admin Features Delivered}{38}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Performance Results}{38}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Comparison with Objectives}{38}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Discussion of Findings}{39}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{41}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Limitations}{41}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Future Enhancements}{41}{section.6.2}%
-\contentsline {chapter}{References and Bibliography}{45}{chapter*.23}%
-\contentsline {chapter}{Appendices}{46}{chapter*.24}%
+\contentsline {subsection}{\numberline {3.2.1}User's Flowchart}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Creator's Flowchart}{16}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Use Case Diagram}{16}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}User's Use Case Diagram}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Creator's Use Case Diagram}{19}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Admin's Use Case Diagram}{20}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Sequence Diagram}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}User's Sequence Diagram}{21}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Admin's Sequence Diagram}{22}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Creator's Sequence Diagram}{23}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}System Architecture}{24}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Entity Relationship (ER) Diagram}{25}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Data Flow Diagram}{27}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Technology Stack}{28}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Implementation and Discussion}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Methodology}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Implementation Steps}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Output Obtained}{30}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Admin Features}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Creator Features}{30}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}User Features}{30}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Test Cases}{31}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Application Screenshots}{32}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Home Page and Video Browsing}{32}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Video Player Interface}{33}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Creator Dashboard}{33}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Admin Dashboard}{34}{subsection.4.5.4}%
+\contentsline {chapter}{\numberline {5}Analysis and Evaluation}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Data Analysis}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Results}{35}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}User Features Delivered}{35}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Admin Features Delivered}{36}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Performance Results}{36}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Comparison with Objectives}{36}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Discussion of Findings}{37}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Limitations}{39}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future Enhancements}{39}{section.6.2}%
+\contentsline {chapter}{References and Bibliography}{43}{chapter*.23}%
+\contentsline {chapter}{Appendices}{44}{chapter*.24}%

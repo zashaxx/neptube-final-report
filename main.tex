@@ -23,6 +23,7 @@
 \usepackage{multirow}                 % Multi-row cells
 \usepackage{caption}                  % Caption customization
 \usepackage{subcaption}               % Sub-figures
+\captionsetup{textfont=it}             % Italic caption text for figures & tables
 \usepackage{enumitem}                 % List customization
 \usepackage{listings}                 % Code listings
 \usepackage{xcolor}                   % Colors
@@ -57,6 +58,10 @@
 %--- Prevent minor overfull boxes in tight list environments ---
 \tolerance=1000
 \emergencystretch=1em
+
+%--- Widow/orphan control: discourage single lines at top/bottom of pages ---
+\widowpenalty=10000
+\clubpenalty=10000
 
 %--- Header/Footer --- REMOVED header text per user request ---
 \pagestyle{fancy}
