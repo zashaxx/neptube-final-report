@@ -17,7 +17,7 @@ An illustration of the logical flow and order of actions or steps in a system or
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{images/user-flowchart.png}
+\includegraphics[width=0.75\textwidth,keepaspectratio,max height=0.8\textheight]{images/user-flowchart.png}
 \caption{User's Flowchart}
 \label{fig:user-flowchart}
 \end{figure}
@@ -28,7 +28,7 @@ The user's flowchart provides a clear and professional overview of how a user in
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{images/creator-flowchart.png}
+\includegraphics[width=0.75\textwidth,keepaspectratio,max height=0.8\textheight]{images/creator-flowchart.png}
 \caption{Creator's Flowchart}
 \label{fig:creator-flowchart}
 \end{figure}
@@ -47,7 +47,7 @@ Use case diagrams are a simple and effective way to show how different people in
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{images/user-usecase.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/user-usecase.png}
 \caption{User's Use Case Diagram}
 \label{fig:user-usecase}
 \end{figure}
@@ -58,7 +58,7 @@ The use case diagram represents the interaction between a Viewer and a video str
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{images/creator-usecase.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/creator-usecase.png}
 \caption{Creator's Use Case Diagram}
 \label{fig:creator-usecase}
 \end{figure}
@@ -71,7 +71,7 @@ The Edit Video Metadata use case allows creators to modify details like titles, 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{images/admin-usecase.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/admin-usecase.png}
 \caption{Admin's Use Case Diagram}
 \label{fig:admin-usecase}
 \end{figure}
@@ -86,7 +86,7 @@ Sequence diagrams help us visualize how different parts of a system communicate 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{images/user-sequence.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.8\textheight]{images/user-sequence.png}
 \caption{User's Sequence Diagram}
 \label{fig:user-sequence}
 \end{figure}
@@ -97,7 +97,7 @@ The user's sequence diagram illustrates the interaction between the user, the Ne
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{images/admin-sequence.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.8\textheight]{images/admin-sequence.png}
 \caption{Admin's Sequence Diagram}
 \label{fig:admin-sequence}
 \end{figure}
@@ -108,12 +108,23 @@ The admin's sequence diagram illustrates how flagged content is moderated throug
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{images/creator-sequence.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.8\textheight]{images/creator-sequence.png}
 \caption{Creator's Sequence Diagram}
 \label{fig:creator-sequence}
 \end{figure}
 
 The creator's sequence diagram illustrates the interactions between a content creator, the NepTube platform, and its database, focusing on video management, viewer engagement, and analytics. The process begins when the creator logs in or registers, prompting NepTube to validate credentials through the database and return a success or failure message. Upon successful login, the system displays the creator's dashboard. The creator can then add a new video, which is sent to NepTube and updated in the database. A confirmation is returned, followed by a success or failure message shown to the creator. If needed, the creator can edit the details of an already uploaded video, with the changes being updated in the database and confirmed back to the creator. Next, the creator can engage with viewers by replying to comments; these replies are updated in the comment section and confirmed by the database, leading to the display of the updated comment section. Finally, the creator may choose to view analytics such as channel statistics and video performance data. This request prompts NepTube to fetch the relevant data from the database, and once retrieved, the data is displayed to the creator. This entire sequence ensures seamless content management and audience interaction for creators on the platform.
+
+\subsection{Whole System Sequence Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.80\textheight]{images/system-sequence.png}
+\caption{Whole System Sequence Diagram}
+\label{fig:system-sequence}
+\end{figure}
+
+The whole system sequence diagram provides a comprehensive view of how all components of the NepTube platform interact during key operations. It traces the complete message flow across six system participants: the end user (viewer, creator, or admin), the browser frontend built with Next.js, the tRPC API layer, the PostgreSQL database, AI/ML services (Pollinations and Replicate), and the payment gateway. The diagram covers three major workflows: (1)~the authentication flow where users register or log in through Clerk and receive session tokens; (2)~the video browsing and recommendation pipeline where videos are fetched from the database and ML-powered recommendations are generated in real time; and (3)~the video upload process where creators submit content that is stored in the database while AI services simultaneously generate thumbnails, titles, and transcriptions via Whisper~v3. Additionally, the premium subscription flow shows how payment requests are routed through eSewa or Khalti gateways for verification before updating the user's subscription tier. This unified view demonstrates the end-to-end data flow and the coordination between all system layers.
 
 \section{System Architecture}
 
@@ -128,7 +139,7 @@ The system architecture of NepTube follows a layered design pattern, separating 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.90\textwidth]{images/system-architecture.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/system-architecture.png}
 \caption{System Architecture Diagram}
 \label{fig:system-architecture}
 \end{figure}
@@ -153,7 +164,7 @@ The Entity Relationship diagram illustrates the database schema and the relation
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.90\textwidth]{images/er-diagram.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/er-diagram.png}
 \caption{Entity Relationship (ER) Diagram}
 \label{fig:er-diagram}
 \end{figure}
@@ -175,12 +186,40 @@ The Data Flow Diagram (DFD) Level~0 provides a context-level overview of the Nep
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{images/dfd-diagram.png}
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/dfd-diagram.png}
 \caption{Data Flow Diagram --- Level 0 (Context Diagram)}
 \label{fig:dfd-level0}
 \end{figure}
 
 The context diagram clearly delineates the system boundary, showing NepTube as a central process that mediates all data flows between users, databases, AI services, and payment providers.
+
+\subsection{Data Flow Diagram --- Level 2}
+
+The Level~2 DFD decomposes the central NepTube process from the context diagram into its constituent sub-processes, providing a detailed view of internal data flows. The diagram identifies the following major processes:
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Process 1.0 --- User Authentication:} Handles user registration and login through Clerk, storing user profiles in the Users data store and returning session tokens.
+  \item \textbf{Process 2.1 --- Video Upload \& Processing:} Manages video file uploads via UploadThing, stores metadata in the Videos data store, and triggers AI content generation.
+  \item \textbf{Process 2.2 --- Video Streaming \& Playback:} Fetches video data from the Videos store and delivers adaptive bitrate streams to viewers.
+  \item \textbf{Process 2.3 --- AI Content Generation:} Receives raw video data and produces AI-generated thumbnails, titles, tags, and transcriptions using Pollinations and Replicate APIs.
+  \item \textbf{Process 2.4 --- Comment \& Interaction:} Processes user comments, likes, and dislikes, storing them in the Comments data store.
+  \item \textbf{Process 3.0 --- Recommendation Engine:} Analyzes watch history and user preferences from the Videos store to generate personalized video suggestions using collaborative and content-based filtering.
+  \item \textbf{Process 4.1 --- Content Moderation:} Reviews flagged content and stores moderation decisions in the Reports data store.
+  \item \textbf{Process 4.2 --- User \& Role Management:} Allows admins to update user roles, ban or unban accounts, and manage platform-wide user settings.
+  \item \textbf{Process 5.1 --- Subscription \& Tier Management:} Manages premium subscription tiers and stores subscription records in the Subscriptions data store.
+  \item \textbf{Process 5.2 --- Payment Processing:} Routes payment requests to external gateways (eSewa, Khalti, Stripe, PayPal) and logs transactions in the Payments data store.
+  \item \textbf{Process 6.0 --- Analytics \& Reporting:} Aggregates video statistics and platform metrics for creator and admin dashboards.
+  \item \textbf{Process 7.0 --- AI Moderation \& Toxicity:} Analyzes comments and content for toxicity, spam, and policy violations, routing flagged items to the Content Moderation process.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth,keepaspectratio,max height=0.75\textheight]{images/dfd-level2.png}
+\caption{Data Flow Diagram --- Level 2}
+\label{fig:dfd-level2}
+\end{figure}
+
+The Level~2 DFD reveals how data traverses through the system's internal processes, from user authentication through content creation and AI processing to payment handling. Six data stores (Users, Videos, Comments, Subscriptions, Payments, and Reports) serve as intermediaries that decouple the processes, enabling each module to operate independently while maintaining data consistency across the platform.
 
 \section{Technology Stack}
 
