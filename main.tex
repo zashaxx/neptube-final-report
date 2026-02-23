@@ -1,0 +1,223 @@
+%========================================================================
+% NepTube Final Project Report
+% An AI-Powered Video Streaming Platform
+% LaTeX Document — A4 Format
+%========================================================================
+\documentclass[12pt,a4paper,oneside,openany]{report}
+
+%--- Packages ---
+\usepackage[left=1.25in, right=1.0in, top=1.25in, bottom=1.25in, headsep=0.5in, footskip=0.5in, headheight=14pt]{geometry}
+\usepackage{times}                    % Times New Roman
+\usepackage{setspace}                 % Line spacing
+\usepackage{titlesec}                 % Heading formatting
+\usepackage{graphicx}                 % Figures
+\usepackage{float}                    % Figure placement
+\usepackage[hidelinks]{hyperref}      % Hyperlinks
+\usepackage{url}                      % URL formatting
+\def\UrlBreaks{\do\/\do-}             % Better URL line breaks
+\usepackage{booktabs}                 % Professional tables
+\usepackage{longtable}                % Multi-page tables
+\usepackage{ltablex}                  % longtable + tabularx
+\usepackage{array}                    % Extended column types
+\usepackage{tabularx}                 % Auto-width tables
+\usepackage{multirow}                 % Multi-row cells
+\usepackage{caption}                  % Caption customization
+\usepackage{subcaption}               % Sub-figures
+\usepackage{enumitem}                 % List customization
+\usepackage{listings}                 % Code listings
+\usepackage{xcolor}                   % Colors
+\usepackage{fancyhdr}                 % Headers and footers
+\usepackage[titles]{tocloft}           % TOC, LOF, LOT formatting (titles → use titlesec)
+\usepackage{pgfgantt}                 % Gantt charts
+\usepackage{tikz}                     % Diagrams
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, calc}
+\usepackage[numbers]{natbib}          % IEEE-style citations
+\usepackage{pdfpages}                 % Include PDF pages
+\usepackage{etoolbox}                 % Patching commands
+
+%--- Justify all text ---
+\usepackage{ragged2e}
+\justifying
+
+%--- Spacing ---
+\onehalfspacing                        % 1.5 line spacing
+\setlength{\parskip}{12pt plus 1pt minus 1pt} % 12pt paragraph spacing
+\setlength{\parindent}{0pt}           % No paragraph indent
+
+%--- Reduce excessive vertical space around floats ---
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+
+%--- List spacing (reduce gaps in itemize/enumerate) ---
+\setlist{nosep, leftmargin=2cm, topsep=2pt, partopsep=0pt, parsep=2pt, itemsep=2pt}
+
+%--- Prevent minor overfull boxes in tight list environments ---
+\tolerance=1000
+\emergencystretch=1em
+
+%--- Header/Footer --- REMOVED header text per user request ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}    % No header rule
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+%--- Ensure plain page style (used by chapter* pages) also shows page numbers ---
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+%--- Heading Formats ---
+% Chapter: 18pt Bold, CENTERED, starts on NEW PAGE
+\titleformat{\chapter}[display]
+  {\normalfont\fontsize{18}{22}\bfseries\centering}
+  {Chapter \thechapter}{8pt}
+  {\fontsize{18}{22}\bfseries\centering}
+\titlespacing*{\chapter}{0pt}{-20pt}{12pt}
+
+% Section (Heading1): 16pt Bold
+\titleformat{\section}
+  {\normalfont\fontsize{16}{20}\bfseries}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Subsection (Heading2): 14pt Bold
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{18}\bfseries}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+
+% Subsubsection (Heading3): 13pt Bold
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{13}{16}\bfseries}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{6pt}{3pt}
+
+% Paragraph (Heading4): 12pt Bold
+\titleformat{\paragraph}[runin]
+  {\normalfont\fontsize{12}{15}\bfseries}
+  {\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{4pt}{6pt}
+
+%--- Code Listing Style ---
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codegreen}{RGB}{0,128,0}
+\definecolor{codegray}{RGB}{128,128,128}
+\definecolor{codeblue}{RGB}{0,0,180}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{codeblue}\bfseries,
+  stringstyle=\color{red},
+  numberstyle=\tiny\color{codegray},
+  numbers=left,
+  frame=single,
+  rulecolor=\color{black!30},
+  tabsize=2,
+  showstringspaces=false
+}
+
+%--- TOC / LOF / LOT title formatting ---
+%  With [titles] option, tocloft delegates headings to \chapter*,
+%  which inherits the centered 18pt format from \titleformat{\chapter}.
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+
+%--- TOC entry spacing (consistent) ---
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesecskip}{2pt}
+\setlength{\cftbeforesubsecskip}{2pt}
+
+%--- LOF / LOT entry spacing (consistent, NO chapter-level gaps) ---
+\setlength{\cftbeforefigskip}{4pt}
+\setlength{\cftbeforetabskip}{4pt}
+
+%--- Suppress automatic \addvspace that \chapter injects into LOF/LOT ---
+%--- This ensures consistent spacing between ALL entries regardless of chapter ---
+\let\origaddvspace\addvspace
+
+%--- Custom column types ---
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{J}[1]{>{\arraybackslash}p{#1}}  % justified column
+
+%--- Table defaults: smaller font, tighter rows, no extra gaps ---
+\renewcommand{\arraystretch}{1.25}
+
+%========================================================================
+\begin{document}
+
+%--- Cover Page ---
+\input{cover}
+
+%--- Front Matter (Roman page numbers) ---
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+%--- Abstract ---
+\input{abstract}
+
+%--- Acknowledgement ---
+\input{acknowledgement}
+
+%--- Table of Contents (auto-generated) ---
+\clearpage
+\tableofcontents
+
+%--- List of Figures (auto-generated, uniform spacing) ---
+\clearpage
+\begingroup
+\renewcommand{\addvspace}[1]{}
+\listoffigures
+\endgroup
+
+%--- List of Tables (auto-generated, uniform spacing) ---
+\clearpage
+\begingroup
+\renewcommand{\addvspace}[1]{}
+\listoftables
+\endgroup
+
+%--- Abbreviations ---
+\clearpage
+\input{abbreviations}
+
+%--- Main Matter (Arabic page numbers) ---
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%--- Chapters ---
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}
+\input{chapter5}
+\input{chapter6}
+
+%--- References (IEEE format) ---
+\clearpage
+\bibliographystyle{IEEEtranN}
+\renewcommand{\bibname}{References and Bibliography}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References and Bibliography}
+
+%--- Appendices ---
+\input{appendices}
+
+\end{document}

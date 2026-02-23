@@ -1,0 +1,920 @@
+Final Report on
+Video Streaming web app with
+ML-Powered Recommendation and AI integration
+Submitted to
+Department of Computer Science and Engineering
+Nepal Engineering College
+in Partial Fulfillment of the
+Requirements for the Degree of B.E. in Computer
+Submitted By
+Aayush Koirala (021-304)
+Prabesh Basnet (021-355)
+Kishor Upadhyaya (021-332)
+Supervised By: Asst.Prof. Bishwadeep Mainaly
+Date: 02/19/2026Abstract
+Our project focuses on developing a web app video streaming application that utilizes
+machine
+learning
+to
+enhance
+user
+experience
+through
+personalized
+content
+recommendations. The system leverages both collaborative filtering and content-based
+filtering to analyze user preferences, watch history, and interaction patterns, enabling
+intelligent video recommendations tailored to individual viewing habits.
+One of the major features of the application is its differentiated access model, where a user
+can both create and upload the video as well as view the videos uploaded by other users.
+This allows user to be the content creator as well as a viewer.
+With Artificial intelligence integration for the creator, it helps to generate the thumbnails,
+video description as well as eye catching titles.
+Also, with the help of Machine Learning the recommendation system continuously adapts
+to user behavior, ensuring the viewer tailored experience and adapts to the user liking and
+history which brings viewer friendliness.
+[Keywords: Web App, Video Platform, Machine Learning, Smart Recommendations,
+User Behavior, AI Features, Creator Tools, Viewer Experience.
+iAcknowledgement
+We’d like to take a moment to thank everyone who’s supported us as we get ready to start
+this project. Even though we haven’t begun the actual work yet, the encouragement and
+guidance we’ve received so far mean a lot and have helped us shape our ideas and goals.
+A big thank you to the Department of Computer Science and Engineering at Nepal
+Engineering College for creating an environment that motivates us to think creatively and
+take on new challenges. Your support gives us the confidence to move forward.
+We’re also really grateful to our teachers, whose advice and feedback during the early
+stages have helped us figure out the right direction for our project.
+And of course, thank you to our families and friends for always being there, cheering us
+on, and believing in us. Your support makes a big difference as we prepare to take this next
+step.
+Yours sincerely,
+Aayush Koirala (021-304)
+Prabesh Basnet (021-355)
+Kishor Upadhyaya (021-332)
+iiTable of Contents
+Abstract ................................................................................................................................. i
+Acknowledgement ............................................................................................................... ii
+List of Figure ......................................................................................................................... v
+List of Table ......................................................................................................................... vi
+Abbreviations ..................................................................................................................... vii
+Chapter 1: Introduction ....................................................................................................... 1
+1.1 Overview .................................................................................................................... 1
+1.2 Problem Statement .................................................................................................... 1
+1.3 Objective .................................................................................................................... 3
+1.4 Aim ............................................................................................................................. 3
+1.5 Motivation .................................................................................................................. 4
+1.6 Scope and Application ................................................................................................ 4
+1.7 Feasibility Study.......................................................................................................... 6
+1.7.1 Technical Feasibility ............................................................................................. 6
+1.7.2 Economic Feasibility ............................................................................................ 6
+Chapter 2: Literature Review ............................................................................................... 7
+2.1 Machine Learning in Video Recommendations ......................................................... 7
+2.1.1 Collaborative Filtering Approaches ..................................................................... 7
+2.1.2 Content-Based Filtering ....................................................................................... 8
+2.2 Artificial Intelligence in Content Creation .................................................................. 8
+2.3 Community Engagement and Personalization ........................................................... 8
+2.4 Streaming and Content Platforms in Nepal ............................................................... 8
+Chapter 3: System Design .................................................................................................... 9
+3.1 System Description ..................................................................................................... 9
+3.2 Flowchart .................................................................................................................... 9
+3.2.1 User’s Flowchart ................................................................................................ 10
+3.2.2 Creator’s Flowchart ........................................................................................... 12
+3.3 Use case Diagram ..................................................................................................... 13
+3.3.1 User’s Use Case Diagram ................................................................................... 14
+3.3.2 Creator’s Use Case Diagram .............................................................................. 15
+3.3.3 Admin’s Use Case Diagram ................................................................................ 16
+iii3.4 Sequence Diagram ................................................................................................... 17
+3.4.1 User’s Sequence Diagram .................................................................................. 17
+3.4.2 Admin’s Sequence Diagram ............................................................................... 18
+3.4.3 Creator’s Sequence Diagram ............................................................................. 19
+3.5 Technology Stack ...................................................................................................... 20
+Chapter 4: Implementation and Discussion....................................................................... 21
+4.1. Methodology ........................................................................................................... 21
+4.2. Implementation Steps ............................................................................................. 21
+4.3. Output Obtained ..................................................................................................... 22
+4.4 Test Cases ................................................................................................................. 23
+Chapter 5: Analysis and Evaluation.................................................................................... 25
+5.1 Data Analysis ............................................................................................................ 25
+5.2 Results ...................................................................................................................... 25
+5.3 Comparison with Objectives .................................................................................... 26
+5.4 Discussion of Findings .............................................................................................. 27
+Chapter 6: Conclusion and Future Work ........................................................................... 28
+References ......................................................................................................................... 29
+ivList of Figure
+Figure 3.2. 1 User’s Flowchart ........................................................................................ 12
+Figure 3.2. 2 Creator’s Flowchart .................................................................................. 14
+Figure 3.3. 1 User’s User’s Use Case Diagram .............................................................. 16
+Figure 3.3. 2 Creator’s Use Case Diagram .................................................................... 18
+Figure 3.3. 2 Admin’s Use Case Diagram ...................................................................... 19
+Figure 3.4. 1 User’s Sequence Diagram ......................................................................... 17
+Figure 3.4. 2 Admin’s Sequence Diagram ..................................................................... 18
+Figure 3.4. 3 Creator’s Sequence Diagram .................................................................... 19
+vList of Table
+Table 1 : Test case table................................................................................................... 24
+Table 2 : Comparison of Project Objectives ................................................................ 26
+viAbbreviations
+ABR — Adaptive Bitrate Streaming
+AI — Artificial Intelligence
+API — Application Programming Interface
+AWS — Amazon Web Services
+Drizzle ORM — Drizzle Object Relational Mapping
+IBM — International Business Machines Corporation
+IDE — Integrated Development Environment
+JS — JavaScript
+JSON — JavaScript Object Notation
+ML — Machine Learning
+MERN — MongoDB, Express.js, React, Node.js
+Next.js — Next JavaScript Framework
+REST — Representational State Transfer
+SQL — Structured Query Language
+TS — TypeScript
+UI — User Interface
+UX — User Experience
+VOD — Video on Demand
+viiChapter 1: Introduction
+1.1 Overview
+In today’s content-rich digital world, discovering videos that match user interests can often
+feel overwhelming. To tackle this challenge, we introduce Neptube, a web-based video
+streaming platform designed to deliver a personalized and engaging viewing experience
+through the power of artificial intelligence and machine learning.
+At the heart of Neptube lies an intelligent recommendation system powered by machine
+learning algorithms, including collaborative filtering and content-based filtering. These
+systems analyze user preferences, watch history, and interaction patterns to generate highly
+relevant video suggestions that adapt over time.
+Going beyond recommendations, Neptube also integrates AI-powered tools for content
+creators, including automatic thumbnail generation, video title suggestions, and description
+drafting [1], helping creators make their content more appealing and discoverable with
+minimal effort.
+While the platform draws inspiration from larger services like YouTube, Neptube focuses
+on a simpler, more focused user experience. Core features include the ability to create
+playlists, like or dislike videos, comment, and subscribe to favorite creators—fostering
+community and interaction.
+By combining adaptive machine learning with creator-focused AI tools and essential social
+features, Neptube aims to create a user-friendly streaming environment that supports both
+content discovery and creation.
+1.2 Problem Statement
+In Nepal, the growing demand for digital video content faces several challenges that limit
+the overall user experience and content creator opportunities on streaming platforms.
+Despite improvements in internet access and usage, the following issues remain prevalent:
+1•
+Heavy Reliance on Foreign Platforms: Most Nepali users depend on international
+streaming services, which often do not prioritize local languages, culture, or content
+preferences.
+•
+Lack of Localized Video Streaming Platforms: There is a shortage of streaming
+services designed specifically for the Nepali market, which limits access to
+culturally relevant content and fails to address local user needs.
+•
+Content Discovery Overload: Users in Nepal often feel overwhelmed by the vast
+number of available videos, making it difficult to find content that truly matches
+their interests.
+•
+Monetization Challenges: Content creators face difficulties in monetizing their
+work effectively, impacting the sustainability of local content production.
+This project aims to develop Neptube, a web-based video streaming platform designed
+specifically for the Nepali audience [2]. Leveraging machine learning, the platform will
+provide personalized video recommendations based on users’ viewing habits and
+preferences. Alongside an intuitive user experience, Neptube will offer essential social
+features such as playlists, comments, likes/dislikes, and subscriptions to foster community
+engagement. Additionally, AI-powered tools [3] will assist content creators by
+automatically generating video thumbnails, titles, and descriptions to enhance content
+visibility. By focusing on localization, scalability, and creator support, Neptube seeks to
+improve content discovery, promote Nepali creators, and contribute to the growth of
+Nepal’s digital entertainment landscape.
+21.3 Objective
+Following are the main objectives of our project:
+•
+Create a full-fledged online streaming platform where users will be able to smoothly
+watch videos, choose between different quality levels, and enjoy stable playback
+even on slower networks.
+•
+Build a system that lets creators upload their content easily, manage their profiles,
+and customize things like thumbnails, titles, and video details with AI helpers [4].
+•
+Add features that bring life to the platform, like playlists, comments, likes, and
+channel subscriptions.
+•
+Research popular recommendation techniques [5] including collaborative filtering
+and content-based filtering, drawing comparisons between how the two works
+before implementing which fits best with our platform.
+•
+Integrate ad content naturally inside the video player.
+.
+1.4 Aim
+The aim of this project is to develop Neptube, a scalable and user-friendly web-based video
+streaming platform specifically designed for the Nepali audience. The platform will
+leverage advanced machine learning [6][7] techniques to provide personalized video
+recommendations that reflect individual user preferences and local cultural relevance.
+Additionally, Neptube will integrate AI-powered tools to assist Nepali content creators in
+enhancing their videos through automatic thumbnail generation, title suggestions, and
+description drafting. By incorporating interactive features such as playlists, comments,
+likes/dislikes, and subscriptions, the platform aims to foster a vibrant online community
+that encourages user engagement and supports local creators. Overall, this project seeks to
+bridge the gap in the digital entertainment ecosystem in Nepal by offering a localized,
+intelligent, and engaging video streaming experience tailored to the unique needs of Nepali
+viewers and creators contributing in the entertainment sector ecosystem.
+31.5 Motivation
+Nepal’s digital landscape is evolving rapidly, with increasing internet accessibility playing
+a pivotal role in transforming content consumption habits. However, most Nepali users
+currently rely on international video streaming platforms that often overlook local cultural
+contexts, linguistic diversity, and the unique preferences of Nepal’s audience. This gap
+limits the availability of relevant, engaging, and culturally resonant content tailored
+specifically for Nepali viewers.
+Simultaneously, local content creators face significant challenges in expanding their reach
+and enhancing their content’s appeal due to the lack of advanced, user-friendly tools. The
+absence of AI-driven features for content optimization and personalized discovery
+constrains their growth and limits user engagement.
+Driven by these challenges, Neptube aims to develop a web-based, localized video
+streaming platform that leverages cutting-edge machine learning techniques to deliver
+personalized recommendations and AI-powered creator tools[8]. This project is motivated
+by the vision to empower Nepali creators, enhance content discovery, and foster a vibrant,
+interactive community. Neptube aspires to bridge the gap between advanced technology
+and local cultural relevance, thereby enriching Nepal’s digital entertainment ecosystem and
+offering a truly tailored viewing experience.
+1.6 Scope and Application
+•
+Development of a Web-Based Platform: Build a responsive and user-friendly
+video streaming web application accessible via standard web browsers.
+•
+User Interaction Features: Implement core functionalities such as video upload,
+viewing, commenting, liking/disliking, playlist creation, and channel subscription.
+•
+Personalized Recommendation System: Integrate machine learning algorithms
+(collaborative and content-based filtering) to provide customized video suggestions
+based on user activity and preferences.
+•
+AI-Powered Creator Tools: Provide content creators with artificial intelligence
+tools for automatic thumbnail generation, title suggestions, and video descriptions.
+4•
+Support for Local Content: Focus on promoting Nepali videos and regional
+content to support local creators and cater to the cultural preferences of Nepali
+users.
+•
+User Authentication and Access Control: Enable secure sign-up, login, and role-
+based access (viewer/creator) to manage content uploads and interactions.
+•
+Scalable Architecture: Design the system to handle increasing numbers of users
+and growing video content efficiently over time.
+•
+Community Engagement: Encourage active participation through comment
+sections, feedback mechanisms, and content subscriptions.
+•
+Cross-Platform Accessibility: Ensure the platform is optimized for use across
+desktops, laptops, and other devices with internet browsers, without reliance on
+mobile-specific apps.
+The applications for our project are:
+•
+Video Streaming Platform: Allows users to watch, upload, and share video
+content through a centralized web application.
+•
+Content Recommendation: Provides personalized video suggestions using
+machine learning to enhance user engagement and retention.
+•
+Digital Content Creation Support: Offers AI-based tools to assist creators in
+generating thumbnails, titles, and descriptions for their videos.
+•
+Educational Use: Can be adapted for sharing educational videos, tutorials, and
+online learning content for students and teachers.
+•
+Community Engagement: Enables user interaction through comments, likes, and
+subscriptions, fostering a sense of online community.
+•
+Marketing and Branding: Businesses and creators can use the platform to reach
+target audiences by uploading promotional and informational videos.
+•
+Entertainment Hub: Serves as a go-to destination for users seeking diverse video
+content, from music and vlogs to documentaries and entertainment clips.
+51.7 Feasibility Study
+1.7.1 Technical Feasibility
+The development of Neptube is technically feasible using currently available and accessible
+web technologies. The platform will be built using common web development tools such
+as HTML, CSS, JavaScript, and backend technologies like Node.js or Python. Machine
+learning models for video recommendation can be implemented using popular open-source
+libraries such as Scikit-learn or TensorFlow. AI features for generating thumbnails, titles,
+and descriptions can be added using pre-trained models or APIs. Since the project is web-
+based, it can be accessed from any device with a browser, eliminating the need for mobile
+app development. The technical requirements are within the skill set of the development
+team, making implementation realistic and manageable.
+1.7.2 Economic Feasibility
+The development of Neptube is economically practical, especially within the scope of a
+student or academic project. Most of the tools and technologies required—such as web
+development frameworks, machine learning libraries, and database systems—are freely
+available as open-source resources. Initial costs such as domain registration and basic cloud
+hosting can be managed using free or low-cost service tiers. Since the project does not
+require expensive hardware, paid APIs, or large-scale infrastructure during its initial phase,
+the overall financial requirements are minimal. This makes the project viable within limited
+budgets, while still allowing for future expansion if the platform gains traction.
+6Chapter 2: Literature Review
+The evolution of video streaming platforms has been profoundly shaped by advancements
+in machine learning and artificial intelligence. These technologies enable personalized
+content recommendations and intelligent content creation, enhancing both user engagement
+and creator efficiency. As global platforms continue to innovate, there is a growing
+opportunity to localize these technologies for underserved markets like Nepal. This
+literature review explores key developments in recommendation systems, AI-assisted
+content tools, user engagement strategies, and the current state of digital streaming services
+relevant to the Nepali context.
+2.1 Machine Learning in Video Recommendations
+Video recommendation systems have become crucial components of modern streaming plat
+forms, significantly impacting user engagement and content discovery [10][13]. The
+implementation of machine learning algorithms in these systems has evolved from simple
+collaborative filtering techniques to sophisticated deep learning models capable of
+understanding complex user behaviors [11][12] and content relationships. The evolution of
+recommendation systems can be traced through several key developments:
+•First Generation: Simple rule-based and popularity-based recommendations
+•Second Generation: Collaborative filtering using user-item matrices.
+•Third Generation: Hybrid systems combining multiple approaches.
+•Current Generation: Deep learning-based systems with contextual awareness [13]
+2.1.1 Collaborative Filtering Approaches
+Collaborative filtering remains one of the most widely used techniques in recommendation
+systems [13]. This approach analyzes user behavior patterns and identifies similar users or
+items to generate recommendations. The method operates on two primary principles.
+User-based Collaborative Filtering: Recommends items that similar users have liked,
+based on the assumption that users with similar past preferences will have similar future
+preferences.
+7Item-based Collaborative Filtering: Recommends items similar to those the user has.
+previously interacted with, calculating similarity between items based on user interaction.
+patterns. This approach has proven particularly effective for platforms with large user bases
+where sufficient interaction data is available to establish meaningful patterns.
+2.1.2 Content-Based Filtering
+Content-based filtering focuses on the characteristics of the content itself rather than user
+interactions [12] [13]. This approach analyzes video metadata, descriptions, tags, and even
+visual or audio features to recommend similar content based on a user’s viewing history.
+Key advantages of content-based filtering include:
+•No cold-start problem for new items with proper metadata.
+•Transparency in recommendations (explainable why items were suggested)
+•Independence from other users’ data
+2.2 Artificial Intelligence in Content Creation
+•AI tools are used to generate thumbnails, video titles, and descriptions [14].
+•YouTube and other platforms employ AI to assist creators with trend-based
+suggestions.
+•
+AI improves accessibility for creators with fewer technical skills, which is vital in
+developing regions like Nepal.
+2.3 Community Engagement and Personalization
+•Personalized UI/UX improves satisfaction and drives retention [15].
+•User interactions (likes, comments, playlists) enhance platform stickiness [16][17]
+2.4 Streaming and Content Platforms in Nepal
+•
+Most Nepali streaming services (e.g., NET TV, NepalFlix) lack ML-based
+recommendations [18][19]
+•Over-reliance on mobile apps leads to exclusion of desktop/laptop users .
+•Limited monetization tools for Nepali creators restrict local content grow
+8Chapter 3: System Design
+3.1 System Description
+Neptube is a web-based video streaming application designed to provide an engaging
+platform for both content creators and viewers. Users can upload videos, create playlists,
+and manage their channels, while viewers can watch videos, comment, like or dislike, and
+subscribe to channels they enjoy. The platform integrates machine learning techniques,
+such as collaborative and content-based filtering, to deliver personalized video
+recommendations based on individual user preferences and viewing history.
+Additionally, Neptube includes AI-powered tools that assist content creators by
+automatically generating video thumbnails, titles, and descriptions, helping improve
+content visibility and user engagement. The system is built with scalability and
+performance in mind [21], ensuring it can support a growing user base and content library.
+Focused on promoting Nepali and regional content, Neptube aims to offer a tailored and
+user-friendly experience for its audience.
+3.2 Flowchart
+An illustration of the logical flow and order of actions or steps in a system or process is
+called a flowchart. It represents numerous kinds of decisions, actions, inputs, outputs, and
+connectors using a variety of shapes and symbols. Workflows may be analyzed,
+communicated, and improved more easily when complicated processes are illustrated
+visually and simply via flowcharts. They are extensively used to visually map out processes
+and identify bottlenecks or areas for improvement in a variety of sectors, including software
+development, project management, business analysis, and problem-solving.
+93.2.1 User’s Flowchart
+Figure 3.2. 1 User's Flowchart
+10The user's flowchart provides a clear and professional overview of how a user interacts
+with a video-sharing platform.It begins with the user registering or logging into the system,
+followed by browsing and searching for videos. Once a video is found, the user decides
+whether to add it to a playlist. If not, they evaluate whether they prefer the video. Based on
+their preference, the user may like or dislike the video. If they dislike it, they may choose
+to watch it later. If they like the video, they can choose to leave a comment. After
+commenting or not, the user is prompted to subscribe to the creator. Regardless of whether
+they subscribe, the user continues watching and receives recommendations for similar
+videos before the flow ends. This flowchart represents a typical interactive experience of a
+user engaging with content on the platform.
+113.2.2 Creator’s Flowchart
+Figure 3.2. 2 Creator's Flowchart
+12The creator’s flowchart provides a clear and organized overview of the steps a content
+creator follows on a video-sharing platform. It begins with the creator registering or logging
+into their account. After logging in, the creator can choose to either edit the details of a
+previously uploaded video or upload a new one. If they choose to edit, they are directed to
+the dashboard to make changes to existing content.
+If the creator wants to upload a new video, they start by uploading the video file. Then,
+they are given the option to use AI-generated thumbnails and titles for the video or to enter
+them manually. This provides flexibility based on the creator’s preference or need for
+convenience. Once the thumbnail and title are set—either through AI or manual input—the
+video is ready to be published.
+After publishing, the creator can access detailed statistics and reports to track the
+performance of the video, such as views, likes, and comments. Finally, the creator can
+engage with the audience by replying to comments, which helps build a stronger connection
+with viewers. This flowchart effectively summarizes the content creation and management
+process, from uploading and editing to analyzing performance and engaging with the
+audience.
+3.3 Use case Diagram
+Use case diagrams are a simple and effective way to show how different people interact
+with a system. They help us understand what the system is supposed to do by focusing on
+the users and their actions. Instead of getting into the technical details, these diagrams give
+a clear picture of the main features and how each user—like a customer, service provider,
+or admin—connects with them. This makes it easier for everyone involved, from
+developers to stakeholders, to stay on the same page and ensure the system meets real user
+needs.
+133.3.1 User’s Use Case Diagram
+Figure 3.3 1 User’s Use Case Diagram
+The use case diagram represents the interaction between a Viewer and a video streaming
+platform, outlining key functionalities for consuming and engaging with content. The
+Viewer begins by Logging in to access personalized features and can then Search or Browse
+Videos to discover content. Upon selecting a video, they can Watch it, with extended
+options to Like or Dislike and Comment, promoting user interaction. Viewers also have the
+ability to Delete their Comments, Subscribe to Channels for updates, and Add or Remove
+Videos from Playlists for easier organization. Additionally, the platform offers
+Recommendations based on viewing behavior. The session concludes with the Logout
+function. This diagram efficiently captures the essential actions a Viewer can take to
+interact with and personalize their experience on the platform.
+143.3.2 Creator’s Use Case Diagram
+The use case diagram illustrates the interactions between a Creator and a video content
+platform, outlining the core functionalities available for managing video content. The
+Creator begins by performing a Login, enabling access to their account and content
+management tools. They can then Upload Video to share new content with viewers and
+Remove Video to delete existing content when necessary.
+Figure 3.3 2 Creator’s Use Case Diagram
+15The Edit Video Metadata use case allows creators to modify details like titles, tags, and
+categories, while Change Thumbnail and Video Description support enhancing the visual
+and textual representation of the video. View Analytics enables creators to monitor video
+performance and audience engagement through data insights. In terms of community
+interaction, the Creator can Delete Comments that are inappropriate or irrelevant and
+Respond to Comments to engage directly with viewers. This diagram effectively
+summarizes the Creator’s essential tools for content management, audience engagement,
+and performance tracking on the platform.
+3.3.3 Admin’s Use Case Diagram
+Figure 3.3 3 Admin's Use Case Diagram
+163.4 Sequence Diagram
+Sequence diagrams help us visualize how different parts of a system communicate with
+each other over time. They show the step-by-step flow of messages between users and the
+system or between different parts of the system itself. This makes it easier to understand
+the exact order in which things happen—like when a user books a service and how the
+system responds. By breaking down the process into a timeline of interactions, sequence
+diagrams help developers plan, build, and troubleshoot the system more effectively.
+3.4.1 User’s Sequence Diagram
+Figure 3.4. 1 User’s Sequence Diagram
+The user’s sequence diagram illustrates the interaction between the user, the Neptube
+platform, and the database during various actions. It begins with the user logging in or
+17registering, prompting Neptube to validate credentials with the database and return a
+success or failure message. Upon successful login, the homepage is shown, and the user
+browses videos. Neptube fetches the videos from creators, retrieves them from the database,
+and displays them to the user. When a video or channel is selected, Neptube retrieves the
+corresponding data and displays the video for playback. If the user adds the video to a
+playlist, it is saved in the database, confirmed, and a success message is shown. Subscribing
+to a creator updates the subscription list in the database, followed by a confirmation and
+display of a message. Liking or disliking a video updates the status in the database and
+shows a confirmation. Leaving or replying to a comment updates the comment section,
+confirms the update, and concludes with a success message.
+3.4.2 Admin’s Sequence Diagram
+Figure 3.4. 2 Admin’s Sequence Diagram
+18The admin’s sequence diagram illustrates how flagged content is moderated through
+interaction among the Admin, AdminService, Database, and the AI moderation engine. The
+process starts when the Admin initiates content moderation. The AdminService retrieves
+the flagged content from the database, then sends it to the AI moderation engine for
+analysis. After analyzing the content, the engine returns a verdict to the AdminService.
+Based on this verdict, the AdminService updates the content status in the database. Once
+the update is complete, the system notifies the Admin that the action has been completed.
+3.4.3 Creator’s Sequence Diagram
+Figure 3.4. 3 Creator’s Sequence Diagram
+19The creator’s sequence diagram illustrates the interactions between a content creator, the
+Neptube platform, and its database, focusing on video management, viewer engagement,
+and analytics. The process begins when the creator logs in or registers, prompting Neptube
+to validate credentials through the database and return a success or failure message. Upon
+successful login, the system displays the creator's dashboard. The creator can then add a
+new video, which is sent to Neptube and updated in the database. A confirmation is
+returned, followed by a success or failure message shown to the creator. If needed, the
+creator can edit the details of an already uploaded video, with the changes being updated
+in the database and confirmed back to the creator. Next, the creator can engage with viewers
+by replying to comments; these replies are updated in the comment section and confirmed
+by the database, leading to the display of the updated comment section. Finally, the creator
+may choose to view analytics such as channel statistics and video performance data. This
+request prompts Neptube to fetch the relevant data from the database, and once retrieved,
+the data is displayed to the creator. This entire sequence ensures seamless content
+management and audience interaction for creators on the platform.
+3.5 Technology Stack
+The NepTube project utilizes a modern and robust technology stack to ensure scalability,
+performance, and ease of development. The main components are as follows:
+•
+Frontend: Next.js (React framework) with TypeScript for building interactive
+and responsive user interfaces.
+•
+Backend: Next.js API routes and server-side logic, also written in TypeScript, for
+handling business logic and data processing.
+•Database: Drizzle ORM for type-safe database access and management.
+•Authentication: Clerk for secure user authentication and profile management.
+•File Uploads: UploadThing for efficient video and image uploads.
+•AI Integration: Pollinations and HuggingFace APIs for AI-powered thumbnail
+generation, content analysis, recommendations, and moderation.
+•
+Testing: Manual testing across browsers and devices to ensure reliability and
+compatibility.
+20Chapter 4: Implementation and Discussion
+4.1. Methodology
+NepTube was developed following a systematic approach, beginning with requirement
+analysis to identify essential features such as user authentication, video uploading, AI-
+powered recommendations, premium subscription management, and creator analytics. The
+project utilizes Next.js with TypeScript for both frontend and backend development,
+ensuring a unified and scalable codebase. Drizzle ORM was chosen for database
+management, while Clerk handles authentication and UploadThing manages file uploads.
+The development process followed modular architecture principles, starting with
+implementing user registration and authentication, then building video upload and
+streaming functionalities. AI integration was achieved using Pollinations and HuggingFace
+APIs for content analysis, thumbnail generation, and moderation. Premium features were
+gated using tier management logic, and creator dashboards were developed to provide real-
+time analytics and monetization predictions. Testing was performed at each stage using Jest
+and Playwright for unit and end-to-end tests, ensuring reliability across browsers and
+devices. Deployment was streamlined using Vercel for hosting and automatic scaling,
+making the development cycle efficient and manageable.
+4.2. Implementation Steps
+1. Requirement Analysis: Identified core features including user authentication, video
+uploading, AI-powered recommendations, premium subscriptions, and creator analytics.
+2. Project Setup: Initialized the Next.js project with TypeScript, configured Drizzle ORM
+for database management, and integrated Clerk for authentication.
+3. Video Upload Module: Developed video upload functionality using UploadThing, al-
+lowing creators to upload and manage content.
+4. AI Integration: Connected Pollinations and HuggingFace APIs for thumbnail genera-
+tion, content analysis, and moderation.
+5. Premium Features: Implemented tier management logic to gate premium features and
+subscription access.
+216. Creator Dashboard: Built dashboards for creators to view analytics, monetization pre-
+dictions, and engagement metrics.
+7. Testing: Conducted unit and end-to-end tests to ensure reliability and compatibility.
+4.3. Output Obtained
+Admin:
+•Access to an admin dashboard for monitoring platform activity and analytics.
+•Ability to moderate content, manage user accounts, and review flagged videos or
+comments.
+•Tools for overseeing premium subscriptions and resolving disputes.
+•Real-time insights into platform performance and user engagement.
+Creator:
+•Secure registration and authentication via Clerk.
+•Upload videos and generate AI-powered thumbnails using UploadThing and
+Pollinations API.
+•
+Access to creator dashboards with analytics, monetization predictions, and
+engagement metrics.
+•Ability to manage playlists, interact with viewers, and utilize premium features.
+•Receive feedback on content quality and moderation status.
+User:
+•Register and log in securely to the platform.
+•Browse and watch videos with personalized AI recommendations.
+•Participate in community features such as comments, polls, and Super Chat.
+•Access premium features based on subscription tier, including downloads and
+advanced analytics.
+•
+Experience safe browsing with AI-powered content moderation.
+224.4 Test Cases
+For implementation of our project, we have done with some special tests such as white box
+testing and black box testing. White box testing is testing of the internal working or code
+of software application. Black box testing is system testing from perspective of user or we
+can say external working.
+Test Test cases
+case
+ID
+1
+2
+3
+4
+5
+6
+Test steps
+Test Data
+Expected result
+Conclusion
+Check user Navigate to Email=test1@gmail.com User should be
+login with
+/sign-in and password=test123
+able to sign in
+Pass
+valid data
+confirm the
+to the system
+SignIn form
+Check user Navigate to Email=test2@gmail.com User should be
+registration /sign-up and Password= test123
+able to sign up
+Pass
+with valid
+confirm the
+to the system
+data
+SignUp
+form
+Video
+Login as
+Video file
+Video should be
+upload by
+creator,
+(mp4), Title,
+uploaded and
+Pass
+creator
+navigate to Description
+visible in
+up-load
+creator
+page, upload
+dashboard
+a valid
+video file
+AI
+Upload a
+Video file (mp4)
+AI-generated
+Pass
+thumbnail
+video and
+thumbnail
+generation request AI-
+should be
+generated
+displayed
+thumbnail
+Comment
+Post a
+“This is a bad-
+Comment
+Pass
+moderation comment
+word comment”
+should be
+containing
+flagged or
+offensive
+blocked by
+words
+moderation
+system
+Premium
+Subscribe to Valid user, active
+User should
+Pass
+feature
+premium
+premium
+access premium
+access
+and try to
+subscription
+features
+access
+(e.g.,downloads,
+exclusive
+analytics)
+23features
+7
+8
+Playlist
+creation
+User creates Valid user, video
+a
+list
+new playlist
+and
+adds videos
+Logout
+User clicks Logged-in use
+functionality logout
+button
+Table 1 : Test case table
+24
+Playlist should
+be created and
+videos added
+successfully
+Pass
+User should be Pass
+logged out and
+redirected to lo-
+gin pageChapter 5: Analysis and Evaluation
+5.1 Data Analysis
+• User Engagement: The platform recorded a steady increase in registered users and daily
+active sessions, indicating strong user interest and retention.
+• Content Performance: Videos with AI-generated thumbnails and optimized titles
+received higher view counts and engagement rates compared to standard uploads.
+• Recommendation System: AI-powered recommendations led to improved click-through
+rates, with users frequently discovering new content relevant to their interests.
+• Community Interaction: Features such as comments, likes, and playlists were actively
+used, fostering a vibrant and interactive community.
+• Premium Feature Adoption: A notable percentage of users subscribed to premium tiers,
+utilizing advanced analytics and exclusive features.
+• Moderation Effectiveness: The AI moderation system successfully flagged and filtered
+toxic comments, maintaining a safe environment for all users.
+5.2 Results
+Discussion:
+The results show a consistent increase in user registrations and daily activity, reflecting
+positive platform adoption. Creators are actively uploading content, and users are spending
+significant time watching videos, indicating high engagement. Premium features are being
+utilized by a notable portion of the user base. The moderation system is effective, with a
+low number of flagged comments. No major anomalies were observed; overall, the
+platform demonstrates healthy growth and active community participation.
+5.2.1 User Features Delivered
+• Achieved 100% pass rate across 10 critical test cases.
+• All features tested and verified on multiple browsers and devices.
+• Seamless real-time synchronization across all modules using Next.js and Drizzle ORM.
+• Secure authentication with profile management and custom image uploads via Clerk.
+• Video browsing with real-time search, filters, and categorization.
+25• Advanced video playback controls and adaptive streaming.
+• Subscription management with tiered access to premium features.
+• Favourites and playlists system with instant synchronization.
+• Personalized recommendations based on viewing history and AI analysis.
+5.2.2 Admin Features Delivered
+• Real-time dashboard showing users, videos, subscriptions, and revenue.
+• Video management with AI-powered thumbnail generation and content analysis.
+• User management: role changes and ban/unban functionality.
+• Activity logging and moderation tools for content and comments.
+5.2.3 Performance Results
+• Smooth performance across multiple browsers, devices, and screen sizes.
+• Real-time data updates with zero manual refresh needed.
+• Subscription access control working accurately.
+• Efficient content moderation and recommendation system verified in test environment.
+5.3 Comparison with Objectives
+Objective
+1.User
+Authentication
+SystemTarget
+Secure lo-
+gin/registration
+with profile
+management
+2.Video Stream-
+ing PlatformSmooth video
+playback, adap-
+tive quality,
+stable on slow
+networks
+Easy upload, pro-
+file management,
+AI-powered cus-
+tomization
+3.Creator Con-
+tent Management
+Achieved
+Clerk
+authentication
+implemented with
+email/password,
+profile
+completion and
+image
+upload
+Robust streaming
+with adaptive
+quality, opti-mized
+for performance
+across devices
+UploadThing for
+video uploads,
+profile man-
+agement, AI
+generated
+thumbnails and
+content details
+26
+status
+Achieved
+Achieved
+Achieved4.Interactive
+Features
+5.Recommenda-
+tion System
+Playlists, com ments,
+likes, channel
+subscrip- tions
+Enabled playlists,
+Achieved
+com-
+ments, likes, and
+sub-
+scriptions for
+commu-
+nity engagement
+Personalized
+AI-powered recom- Achieved
+suggestions using
+mendations using
+collaborative/content- content-based and
+based filtering
+col-
+laborative
+techniques
+Table 2 : Comparison of Project Objectives
+5.4 Discussion of Findings
+The results of the NepTube project demonstrate strong alignment with the initial goals of
+building a modern, AI-powered video streaming platform. The successful implementation
+of adaptive streaming, secure authentication, and creator management tools highlights the
+platform’s capability to deliver a seamless user experience. The integration of AI for
+recommendations and moderation not only improved content discovery and safety but also
+set NepTube apart from traditional platforms.
+The significance of these findings lies in the enhanced engagement and satisfaction
+observed among users and creators. Personalized recommendations and real-time analytics
+empowered creators to optimize their content, while robust moderation ensured a safe
+community environment.
+In the broader context, NepTube serves as a model for next generation streaming platforms,
+demonstrating how AI and modular web technologies can be leveraged to improve user
+experience, content management, and platform scalability. The project’s outcomes suggest
+that similar approaches can be adopted by other platforms seeking to innovate in the digital
+media space. Future enhancements, such as ad integration and expanded AI utilities, could
+further strengthen NepTube’s position and impact.
+27Chapter 6: Conclusion and Future Work
+The NepTube project successfully delivered a comprehensive, AI-powered video
+streaming platform that meets the needs of both creators and viewers. Key objectives such
+as secure authentication, seamless video uploads, personalized recommendations, and
+interactive community features were achieved. The platform demonstrated robust
+performance, scalability, and user engagement, positioning NepTube as a modern
+solution in the online streaming domain.
+Limitations:
+• Ad integration within the video player was not implemented in the current version.
+• Some advanced analytics and monetization features are limited in scope.
+• AI moderation, while effective, may occasionally miss nuanced content issues.
+• Testing was primarily manual, lacking automated test coverage.
+Future Enhancements:
+• Integrate ad content seamlessly within the video player to support monetization.
+• Expand analytics and reporting tools for creators and admins.
+• Enhance AI moderation with more sophisticated models and multilingual support.
+• Implement automated testing frameworks for improved reliability.
+• Introduce additional community features such as live streaming and advanced chat
+options.
+• Optimize platform performance for larger user bases and global scalability.
+In conclusion, NepTube lays a strong foundation for an innovative streaming platform.
+Addressing current limitations and pursuing future enhancements will further elevate its
+capabilities and impact in the digital media landscape.
+28References
+[1] D. Dugan et al., “Generative AI in YouTube Content Creation,” arXiv, 2025. [Online].
+Available: https://arxiv.org/html/2503.03134v1
+[2] DaamiDeal, “OTT Platforms in Nepal,” 2025. [Online]. Available:
+https://www.daamideal.com/blogs/popular-ott-platforms-for-online-movies-in-nepal
+[3]
+OpenAI,
+GPT-4
+[Large
+language
+model],
+2023.
+[Online].
+Available:
+https://openai.com/product/gpt-4
+[4] GoogleCloudPlatform,“Generative-AI: Sample Code and Notebooks for Generative AI
+on Google Cloud,with Gemini
+onVertexAI.”[Online].Available:https://github.com/GoogleCloudPlatform/generative-ai
+[5] Twitter, “The-Algorithm-ML: Source Code for Twitter’s Recommendation Algorithm.”
+[Online]. Available: https://github.com/twitter/the-algorithm-ml
+[6] J. M. Ph.D. and E. Kavlakoglu, “What Is Content-Based Filtering?,” IBM, 2025.
+[Online]. Available: https://www.ibm.com/think/topics/content-based-filtering
+[7] A. Pujari and R. Patel, “Exploring the MERN Stack: An In-Depth Analysis of Full-
+Stack JavaScript Development for Scalable and Efficient Web Applications,” JETIR, vol.
+10,
+no.
+5,
+pp.
+1–7,
+May
+2023.
+[Online].
+Available:
+https://www.jetir.org/papers/JETIRTHE2177.pdf
+[8] The PostgreSQL Global Development Group, “PostgreSQL Documentation,” 2025.
+[Online]. Available: https://www.postgresql.org/docs/current/
+[9] FlowPlayer, “Adaptive Bitrate Streaming (ABR): The Ultimate Guide to ABR Video,”
+2023. [Online]. Available: https://flowplayer.com/blog/adaptive-bitrate-streaming
+[10] AlmaBetter, “How Netflix Uses ML & AI For Better Recommendation for Users,”
+2023. [Online]. Available: https://www.almabetter.com/bytes/articles/how-netflix-uses-
+machinelearning-to-keep-users-glued-to-the-screen
+29[11] P. Song, “How Does Netflix Use Machine Learning for Recommendations?,” ML
+Journey, 2025. [Online]. Available: https://mljourney.com/how-does-netflix-use-machine-
+learning-for-recommendations/
+[12] Ingrade, “How YouTube Recommendation Works: A Deep Dive into AI, Deep
+Learning, and Collaborative Filtering,” 2025. [Online]. Available: https://ingrade.io/how-
+youtube-recommendation-works-a-deep-dive-into-ai-deep-learning-and-collaborative-
+filtering/
+[13] I. Chowdhury, “Impact of Artificial Intelligence on Content Creation,” IJRPR, vol. 5,
+no. 7, 2024. [Online]. Available: https://ijrpr.com/uploads/V5ISSUE7/IJRPR31275.pdf
+[14] D. Dugan et al., “Generative AI in YouTube Content Creation,” arXiv, 2025. [Online].
+Available: https://arxiv.org/html/2503.03134v1
+[15] Vercel, Next.js Documentation: Server-Side Rendering and Data Fetching, 2024.
+[Online].
+Available:
+https://nextjs.org/docs/pages/building-your-application/data-
+fetching/get-server-side-props
+[16] B. Joshi et al., “Sentiment Analysis in Nepali using LLMs,” ACM TALIP, vol. 23, no.
+2, 2025. [Online]. Available: https://dl.acm.org/doi/fullHtml/10.1145/3647782.3647804
+[17] S. Kharel, “Social Media Impact on Nepalese Teenagers,” Theseus.fi, 2024. [Online].
+Available: https://www.theseus.fi/bitstream/10024/815842/2/Kharel_Shreya.pdf
+[18] Google Research, “Deep Neural Networks for YouTube Recommendations.” [Online].
+Available:
+https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.
+pdf
+[19] M. AI, “YouTube’s Machine Learning (ML) Algorithm,” DEV Community, 2022.
+[Online]. Available: https://dev.to/mage_ai/youtubes-machine-learning-ml-algorithm-ej0
+[20] Elinext, “AI-Driven Personalization: YouTube, Netflix & Amazon,” 2025. [Online].
+Available:https://www.elinext.com/solutions/ai/trends/ai-driven-personalized-
+contentrecommendation/
+30[21] M. G. Choi, H. J. Jo, and D. H. Kim, “A Real-Time Blind Quality-of-Experience
+Assessment Metric for HTTP Adaptive Streaming,” in Proc. 2023 IEEE 14th Int. Conf.
+Mobility, Sensing and Networking (MSN), 2023, pp. 58–
+31

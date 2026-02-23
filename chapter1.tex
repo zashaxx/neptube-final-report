@@ -1,0 +1,180 @@
+%========================================================================
+% Chapter 1: Introduction
+%========================================================================
+\chapter{Introduction}
+
+\section{Overview}
+
+In today's content-rich digital world, discovering videos that match user interests can often feel overwhelming. To tackle this challenge, we introduce NepTube, a web-based video streaming platform designed to deliver a personalized and engaging viewing experience through the power of artificial intelligence and machine learning.
+
+At the heart of NepTube lies an intelligent recommendation system powered by machine learning algorithms, including collaborative filtering \cite{koren2009matrix} and content-based filtering. These systems analyze user preferences, watch history, and interaction patterns to generate highly relevant video suggestions that adapt over time \cite{he2017neural}.
+
+Going beyond recommendations, NepTube also integrates AI-powered tools for content creators, including automatic thumbnail generation, video title suggestions, and description drafting \cite{dugan2025genai}, helping creators make their content more appealing and discoverable with minimal effort.
+
+While the platform draws inspiration from larger services like YouTube \cite{elinext2025ai}, NepTube focuses on a simpler, more focused user experience. Core features include the ability to create playlists, like or dislike videos, comment, and subscribe to favorite creators---fostering community and interaction.
+
+By combining adaptive machine learning with creator-focused AI tools and essential social features, NepTube aims to create a user-friendly streaming environment that supports both content discovery and creation.
+
+\section{Problem Statement}
+
+In Nepal, the growing demand for digital video content faces several challenges that limit the overall user experience and content creator opportunities on streaming platforms. Despite improvements in internet access and usage, the following issues remain prevalent:
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Heavy Reliance on Foreign Platforms:} Most Nepali users depend on international streaming services, which often do not prioritize local languages, culture, or content preferences.
+
+  \item \textbf{Lack of Localized Video Streaming Platforms:} There is a shortage of streaming services designed specifically for the Nepali market, which limits access to culturally relevant content and fails to address local user needs.
+
+  \item \textbf{Content Discovery Overload:} Users in Nepal often feel overwhelmed by the vast number of available videos, making it difficult to find content that truly matches their interests.
+
+  \item \textbf{Monetization Challenges:} Content creators face difficulties in monetizing their work effectively, impacting the sustainability of local content production.
+\end{itemize}
+
+This project aims to develop NepTube, a web-based video streaming platform designed specifically for the Nepali audience \cite{daamideal2025ott}. Leveraging machine learning, the platform will provide personalized video recommendations based on users' viewing habits and preferences. Alongside an intuitive user experience, NepTube will offer essential social features such as playlists, comments, likes/dislikes, and subscriptions to foster community engagement. Additionally, AI-powered tools \cite{openai2023gpt4} will assist content creators by automatically generating video thumbnails, titles, and descriptions to enhance content visibility. By focusing on localization, scalability, and creator support, NepTube seeks to improve content discovery, promote Nepali creators, and contribute to the growth of Nepal's digital entertainment landscape.
+
+\section{Objectives}
+
+Following are the main objectives of our project:
+
+\begin{itemize}[leftmargin=2cm]
+  \item Create a full-fledged online streaming platform where users will be able to smoothly watch videos, choose between different quality levels \cite{flowplayer2023abr}, and enjoy stable playback even on slower networks.
+
+  \item Build a system that lets creators upload their content easily, manage their profiles, and customize things like thumbnails, titles, and video details with AI helpers \cite{googlecloud2024genai}.
+
+  \item Add features that bring life to the platform, like playlists, comments, likes, and channel subscriptions.
+
+  \item Research popular recommendation techniques \cite{twitter2023algorithm} including collaborative filtering and content-based filtering, drawing comparisons between how the two work before implementing which fits best with our platform.
+
+  \item Integrate ad content naturally inside the video player.
+\end{itemize}
+
+\section{Aim}
+
+The aim of this project is to develop NepTube, a scalable and user-friendly web-based video streaming platform specifically designed for the Nepali audience. The platform will leverage advanced machine learning \cite{ibm2025contentfiltering, pujari2023mern} techniques to provide personalized video recommendations that reflect individual user preferences and local cultural relevance.
+
+Additionally, NepTube will integrate AI-powered tools to assist Nepali content creators in enhancing their videos through automatic thumbnail generation, title suggestions, and description drafting. By incorporating interactive features such as playlists, comments, likes/dislikes, and subscriptions, the platform aims to foster a vibrant online community that encourages user engagement and supports local creators. Overall, this project seeks to bridge the gap in the digital entertainment ecosystem in Nepal by offering a localized, intelligent, and engaging video streaming experience tailored to the unique needs of Nepali viewers and creators contributing in the entertainment sector ecosystem.
+
+\section{Motivation}
+
+Nepal's digital landscape is evolving rapidly, with increasing internet accessibility playing a pivotal role in transforming content consumption habits. However, most Nepali users currently rely on international video streaming platforms that often overlook local cultural contexts, linguistic diversity, and the unique preferences of Nepal's audience. This gap limits the availability of relevant, engaging, and culturally resonant content tailored specifically for Nepali viewers.
+
+Simultaneously, local content creators face significant challenges in expanding their reach and enhancing their content's appeal due to the lack of advanced, user-friendly tools. The absence of AI-driven features for content optimization and personalized discovery constrains their growth and limits user engagement.
+
+Driven by these challenges, NepTube aims to develop a web-based, localized video streaming platform that leverages cutting-edge machine learning techniques \cite{gomezuribe2016netflix} to deliver personalized recommendations and AI-powered creator tools. This project is motivated by the vision to empower Nepali creators, enhance content discovery, and foster a vibrant, interactive community. NepTube aspires to bridge the gap between advanced technology and local cultural relevance, thereby enriching Nepal's digital entertainment ecosystem and offering a truly tailored viewing experience.
+
+\section{Expected Outcomes}
+
+The expected outcomes of this project are as follows:
+
+\begin{itemize}[leftmargin=2cm]
+  \item A fully functional web-based video streaming platform accessible from any modern browser.
+  \item An intelligent recommendation system that delivers personalized video suggestions based on user behavior and preferences.
+  \item AI-powered creator tools for automatic thumbnail generation, title suggestions, and video description drafting.
+  \item A robust content moderation pipeline integrating AI-based toxicity detection and sentiment analysis.
+  \item Secure user authentication with role-based access control (viewer, creator, admin).
+  \item A subscription management system with tiered premium features and local payment gateway integration.
+  \item Comprehensive admin and creator dashboards for analytics, content management, and platform monitoring.
+  \item A scalable and deployable platform architecture using modern serverless technologies.
+\end{itemize}
+
+\section{Scope and Applications}
+
+\subsection{Scope}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Development of a Web-Based Platform:} Build a responsive and user-friendly video streaming web application accessible via standard web browsers.
+
+  \item \textbf{User Interaction Features:} Implement core functionalities such as video upload, viewing, commenting, liking/disliking, playlist creation, and channel subscription.
+
+  \item \textbf{Personalized Recommendation System:} Integrate machine learning algorithms (collaborative and content-based filtering) to provide customized video suggestions based on user activity and preferences.
+
+  \item \textbf{AI-Powered Creator Tools:} Provide content creators with artificial intelligence tools for automatic thumbnail generation, title suggestions, and video descriptions.
+
+  \item \textbf{Support for Local Content:} Focus on promoting Nepali videos and regional content to support local creators and cater to the cultural preferences of Nepali users.
+
+  \item \textbf{User Authentication and Access Control:} Enable secure sign-up, login, and role-based access (viewer/creator) to manage content uploads and interactions.
+
+  \item \textbf{Scalable Architecture:} Design the system to handle increasing numbers of users and growing video content efficiently over time.
+
+  \item \textbf{Community Engagement:} Encourage active participation through comment sections, feedback mechanisms, and content subscriptions.
+
+  \item \textbf{Cross-Platform Accessibility:} Ensure the platform is optimized for use across desktops, laptops, and other devices with internet browsers, without reliance on mobile-specific apps.
+\end{itemize}
+
+\subsection{Applications}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Video Streaming Platform:} Allows users to watch, upload, and share video content through a centralized web application.
+  \item \textbf{Content Recommendation:} Provides personalized video suggestions using machine learning to enhance user engagement and retention.
+  \item \textbf{Digital Content Creation Support:} Offers AI-based tools to assist creators in generating thumbnails, titles, and descriptions for their videos.
+  \item \textbf{Educational Use:} Can be adapted for sharing educational videos, tutorials, and online learning content for students and teachers.
+  \item \textbf{Community Engagement:} Enables user interaction through comments, likes, and subscriptions, fostering a sense of online community.
+  \item \textbf{Marketing and Branding:} Businesses and creators can use the platform to reach target audiences by uploading promotional and informational videos.
+  \item \textbf{Entertainment Hub:} Serves as a go-to destination for users seeking diverse video content, from music and vlogs to documentaries and entertainment clips.
+\end{itemize}
+
+\section{Feasibility Study}
+
+\subsection{Technical Feasibility}
+
+The development of NepTube is technically feasible using currently available and accessible web technologies. The platform will be built using modern web development tools such as Next.js \cite{vercel2024nextjs}, TypeScript \cite{typescript2024docs}, and React \cite{react2024docs}. Machine learning models for video recommendation can be implemented using popular open-source libraries and AI APIs \cite{pollinations2024api}. AI features for generating thumbnails, titles, and descriptions can be added using pre-trained models such as Whisper v3 for transcription \cite{radford2023whisper}. Since the project is web-based, it can be accessed from any device with a browser, eliminating the need for mobile app development. The technical requirements are within the skill set of the development team, making implementation realistic and manageable.
+
+\subsection{Economic Feasibility}
+
+The development of NepTube is economically practical, especially within the scope of a student or academic project. Most of the tools and technologies required---such as web development frameworks, machine learning libraries, and database systems---are freely available as open-source resources. Initial costs such as domain registration and basic cloud hosting can be managed using free or low-cost service tiers. Since the project does not require expensive hardware, paid APIs, or large-scale infrastructure during its initial phase, the overall financial requirements are minimal. This makes the project viable within limited budgets, while still allowing for future expansion if the platform gains traction.
+
+\subsection{Operational Feasibility}
+
+The NepTube platform is operationally feasible as it targets users already familiar with video streaming interfaces. The application follows established UX patterns from popular platforms, minimizing the learning curve. Content creators can easily upload and manage their videos through an intuitive dashboard, while viewers navigate the platform using familiar browsing, search, and recommendation features. System administration is streamlined through the admin dashboard with AI-assisted moderation tools. The platform requires minimal ongoing maintenance due to its serverless deployment architecture on Vercel.
+
+\section{System Requirements}
+
+\subsection{Software Requirements}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Operating System:} Windows 10/11, macOS 12+, or Linux (Ubuntu 22.04+)
+  \item \textbf{Runtime:} Bun 1.x or Node.js 20+
+  \item \textbf{Package Manager:} Bun (bundled with runtime)
+  \item \textbf{Database:} PostgreSQL 16.x (hosted on Neon serverless)
+  \item \textbf{Version Control:} Git 2.x+
+  \item \textbf{IDE:} Visual Studio Code (recommended)
+  \item \textbf{Browser:} Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari (latest versions)
+\end{itemize}
+
+\subsection{Hardware Requirements}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Processor:} Intel Core i5 or equivalent (minimum), Intel Core i7/AMD Ryzen 7 (recommended)
+  \item \textbf{RAM:} 8 GB (minimum), 16 GB (recommended)
+  \item \textbf{Storage:} 500 MB for application code, 10 GB+ for video storage
+  \item \textbf{Network:} Broadband internet connection (minimum 10 Mbps)
+  \item \textbf{Display:} 1920$\times$1080 resolution (recommended)
+\end{itemize}
+
+\section{Project Schedule}
+
+The development of NepTube followed a structured schedule divided into major phases. The project was completed over a period of approximately 8 months.
+
+\begin{table}[H]
+\centering
+\caption{Project Schedule}
+\label{tab:project-schedule}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|c|J{4cm}|J{4cm}|J{4cm}|}
+\hline
+\textbf{Phase} & \textbf{Activity} & \textbf{Duration} & \textbf{Deliverable} \\
+\hline
+1 & Requirement Analysis \& Planning & Month 1--2 & SRS Document, Project Plan \\
+\hline
+2 & System Design & Month 2--3 & Flowcharts, Use Cases, Sequence Diagrams \\
+\hline
+3 & Core Development & Month 3--5 & Authentication, Video Upload, Streaming \\
+\hline
+4 & AI Integration & Month 5--6 & Recommendations, Moderation, Content Generation \\
+\hline
+5 & Premium \& Community Features & Month 6--7 & Payments, Subscriptions, Community Posts \\
+\hline
+6 & Testing \& Documentation & Month 7--8 & Test Cases, Final Report \\
+\hline
+\end{tabularx}
+\end{table}

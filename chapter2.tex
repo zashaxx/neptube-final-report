@@ -1,0 +1,126 @@
+%========================================================================
+% Chapter 2: Literature Review
+%========================================================================
+\chapter{Literature Review}
+
+The evolution of video streaming platforms has been profoundly shaped by advancements in machine learning and artificial intelligence. These technologies enable personalized content recommendations and intelligent content creation, enhancing both user engagement and creator efficiency. As global platforms continue to innovate, there is a growing opportunity to localize these technologies for underserved markets like Nepal. This literature review explores key developments in recommendation systems, AI-assisted content tools, user engagement strategies, and the current state of digital streaming services relevant to the Nepali context.
+
+\section{Machine Learning in Video Recommendations}
+
+Video recommendation systems have become crucial components of modern streaming platforms, significantly impacting user engagement and content discovery \cite{almabetter2023netflix, chowdhury2024ai}. The implementation of machine learning algorithms in these systems has evolved from simple collaborative filtering techniques to sophisticated deep learning models capable of understanding complex user behaviors \cite{song2025netflix, ingrade2025youtube} and content relationships. The evolution of recommendation systems can be traced through several key developments:
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{First Generation:} Simple rule-based and popularity-based recommendations.
+  \item \textbf{Second Generation:} Collaborative filtering using user-item matrices.
+  \item \textbf{Third Generation:} Hybrid systems combining multiple approaches.
+  \item \textbf{Current Generation:} Deep learning-based systems with contextual awareness \cite{chowdhury2024ai}.
+\end{itemize}
+
+\subsection{Collaborative Filtering Approaches}
+
+Collaborative filtering remains one of the most widely used techniques in recommendation systems \cite{chowdhury2024ai, koren2009matrix}. This approach analyzes user behavior patterns and identifies similar users or items to generate recommendations. Matrix factorization techniques \cite{koren2009matrix} and neural collaborative filtering \cite{he2017neural} have significantly advanced the effectiveness of this method. The technique operates on two primary principles:
+
+\textbf{User-based Collaborative Filtering:} Recommends items that similar users have liked, based on the assumption that users with similar past preferences will have similar future preferences.
+
+\textbf{Item-based Collaborative Filtering:} Recommends items similar to those the user has previously interacted with, calculating similarity between items based on user interaction patterns. This approach has proven particularly effective for platforms with large user bases where sufficient interaction data is available to establish meaningful patterns.
+
+\subsection{Content-Based Filtering}
+
+Content-based filtering focuses on the characteristics of the content itself rather than user interactions \cite{ingrade2025youtube, chowdhury2024ai}. This approach analyzes video metadata, descriptions, tags, and even visual or audio features to recommend similar content based on a user's viewing history.
+
+Key advantages of content-based filtering include:
+\begin{itemize}[leftmargin=2cm]
+  \item No cold-start problem for new items with proper metadata.
+  \item Transparency in recommendations (explainable why items were suggested).
+  \item Independence from other users' data.
+\end{itemize}
+
+\section{Artificial Intelligence in Content Creation}
+
+\begin{itemize}[leftmargin=2cm]
+  \item AI tools are used to generate thumbnails, video titles, and descriptions \cite{dugan2025genai}.
+  \item YouTube and other platforms employ AI to assist creators with trend-based suggestions.
+  \item AI improves accessibility for creators with fewer technical skills, which is vital in developing regions like Nepal.
+\end{itemize}
+
+\section{Community Engagement and Personalization}
+
+\begin{itemize}[leftmargin=2cm]
+  \item Personalized UI/UX improves satisfaction and drives retention \cite{vercel2024nextjs}.
+  \item User interactions (likes, comments, playlists) enhance platform stickiness \cite{joshi2025sentiment, kharel2024social}.
+\end{itemize}
+
+\section{Streaming and Content Platforms in Nepal}
+
+\begin{itemize}[leftmargin=2cm]
+  \item Most Nepali streaming services (e.g., NET TV, NepalFlix) lack ML-based recommendations \cite{covington2016deep, mageai2022youtube}.
+  \item Over-reliance on mobile apps leads to exclusion of desktop/laptop users.
+  \item Limited monetization tools for Nepali creators restrict local content growth.
+  \item Leading global platforms demonstrate how AI-driven personalization enhances user retention and satisfaction \cite{elinext2025ai, gomezuribe2016netflix}.
+\end{itemize}
+
+\section{Content Moderation and Safety}
+
+As video streaming platforms grow, ensuring the safety and quality of user-generated content becomes a critical challenge \cite{risch2020toxic}. AI-powered moderation systems have emerged as essential tools for maintaining healthy online communities. Modern approaches utilize natural language processing to detect toxic comments, spam, and hate speech with high accuracy. Platforms like YouTube and Facebook employ multi-layered moderation pipelines that combine automated AI screening with human review for edge cases.
+
+NepTube addresses this need by integrating toxicity scoring, sentiment analysis, and automated content flagging into its moderation pipeline. The system analyzes both video content and user comments in real time, enabling proactive content management rather than reactive moderation.
+
+\section{Adaptive Bitrate Streaming}
+
+Adaptive bitrate streaming (ABR) is a fundamental technology that enables smooth video playback across varying network conditions \cite{flowplayer2023abr, choi2023qoe}. ABR dynamically adjusts video quality based on the viewer's available bandwidth, reducing buffering and improving the overall viewing experience. Leading platforms implement ABR through protocols such as HLS (HTTP Live Streaming) and DASH (Dynamic Adaptive Streaming over HTTP).
+
+NepTube implements multi-quality video support with quality variants ranging from 360p to 4K, allowing users to select their preferred quality or enable automatic quality switching based on network conditions.
+
+\section{Comparison of Existing Platforms}
+
+To contextualize the contribution of NepTube, a comparative analysis of existing video streaming platforms is presented in Table~\ref{tab:platform-comparison}. The comparison evaluates key features relevant to the Nepali market.
+
+{\small
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|J{2.5cm}|c|c|c|c|c|}
+\caption{Comparison of Existing Platforms} \label{tab:platform-comparison} \\
+\hline
+\textbf{Feature} & \textbf{YouTube} & \textbf{NET TV} & \textbf{NepalFlix} & \textbf{Daami} & \textbf{NepTube} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Feature} & \textbf{YouTube} & \textbf{NET TV} & \textbf{NepalFlix} & \textbf{Daami} & \textbf{NepTube} \\
+\hline
+\endhead
+\hline
+\endfoot
+ML Recommendations & Yes & No & No & No & Yes \\
+\hline
+AI Creator Tools & Partial & No & No & No & Yes \\
+\hline
+Content Moderation & Yes & Limited & No & Limited & Yes \\
+\hline
+Local Payment (eSewa/Khalti) & No & Yes & Yes & Yes & Yes \\
+\hline
+Web-Based Access & Yes & App only & App only & Web+App & Yes \\
+\hline
+Localized Content Focus & No & Partial & Yes & Yes & Yes \\
+\hline
+Creator Analytics & Yes & No & No & No & Yes \\
+\hline
+Adaptive Streaming & Yes & Yes & Limited & Limited & Yes \\
+\hline
+Community Features & Yes & No & No & Limited & Yes \\
+\hline
+\end{longtable}
+}
+
+As shown in Table~\ref{tab:platform-comparison}, NepTube combines the advanced AI and ML-driven features of global platforms with localization and payment integration essential for the Nepali market, addressing a clear gap in the current ecosystem.
+
+\section{Research Gap and Contribution}
+
+While significant advances have been made in recommendation systems, content moderation, and streaming technologies by global platforms, several gaps remain in the context of the Nepali digital ecosystem:
+
+\begin{itemize}[leftmargin=2cm]
+  \item Existing Nepali streaming platforms lack intelligent recommendation engines that leverage collaborative and content-based filtering techniques.
+  \item There is no locally developed platform that provides AI-powered creator tools for content optimization.
+  \item Community engagement features such as comments, polls, and community posts are absent from most Nepali services.
+  \item Payment integration with local digital wallets (eSewa, Khalti) for premium subscriptions is not available on international platforms.
+\end{itemize}
+
+NepTube addresses these gaps by combining modern web technologies with AI-powered features, specifically tailored for the Nepali market. The platform provides a localized alternative that supports both content discovery and creator empowerment through intelligent automation.

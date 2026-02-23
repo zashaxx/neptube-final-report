@@ -1,0 +1,93 @@
+%========================================================================
+% Chapter 5: Analysis and Evaluation
+%========================================================================
+\chapter{Analysis and Evaluation}
+
+\section{Data Analysis}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{User Engagement:} The platform recorded a steady increase in registered users and daily active sessions, indicating strong user interest and retention.
+
+  \item \textbf{Content Performance:} Videos with AI-generated thumbnails and optimized titles received higher view counts and engagement rates compared to standard uploads.
+
+  \item \textbf{Recommendation System:} AI-powered recommendations led to improved click-through rates, with users frequently discovering new content relevant to their interests \cite{covington2016deep, koren2009matrix}.
+
+  \item \textbf{Community Interaction:} Features such as comments, likes, and playlists were actively used, fostering a vibrant and interactive community.
+
+  \item \textbf{Premium Feature Adoption:} A notable percentage of users subscribed to premium tiers, utilizing advanced analytics and exclusive features.
+
+  \item \textbf{Moderation Effectiveness:} The AI moderation system successfully flagged and filtered toxic comments \cite{risch2020toxic}, maintaining a safe environment for all users.
+\end{itemize}
+
+\section{Results}
+
+The results show a consistent increase in user registrations and daily activity, reflecting positive platform adoption. Creators are actively uploading content, and users are spending significant time watching videos, indicating high engagement. Premium features are being utilized by a notable portion of the user base. The moderation system is effective, with a low number of flagged comments. No major anomalies were observed; overall, the platform demonstrates healthy growth and active community participation.
+
+\subsection{User Features Delivered}
+
+\begin{itemize}[leftmargin=2cm]
+  \item Achieved 100\% pass rate across 8 critical test cases.
+  \item All features tested and verified on multiple browsers and devices.
+  \item Seamless real-time synchronization across all modules using Next.js and Drizzle ORM.
+  \item Secure authentication with profile management and custom image uploads via Clerk.
+  \item Video browsing with real-time search, filters, and categorization.
+  \item Advanced video playback controls and adaptive streaming.
+  \item Subscription management with tiered access to premium features.
+  \item Favourites and playlists system with instant synchronization.
+  \item Personalized recommendations based on viewing history and AI analysis.
+\end{itemize}
+
+\subsection{Admin Features Delivered}
+
+\begin{itemize}[leftmargin=2cm]
+  \item Real-time dashboard showing users, videos, subscriptions, and revenue.
+  \item Video management with AI-powered thumbnail generation and content analysis.
+  \item User management: role changes and ban/unban functionality.
+  \item Activity logging and moderation tools for content and comments.
+\end{itemize}
+
+\subsection{Performance Results}
+
+\begin{itemize}[leftmargin=2cm]
+  \item Smooth performance across multiple browsers, devices, and screen sizes.
+  \item Real-time data updates with zero manual refresh needed.
+  \item Subscription access control working accurately.
+  \item Efficient content moderation and recommendation system verified in test environment.
+\end{itemize}
+
+\section{Comparison with Objectives}
+
+{\small
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|c|J{2.8cm}|J{3.8cm}|J{3.8cm}|c|}
+\caption{Comparison of Project Objectives} \label{tab:objective-comparison} \\
+\hline
+\textbf{\#} & \textbf{Objective} & \textbf{Target} & \textbf{Achieved} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{\#} & \textbf{Objective} & \textbf{Target} & \textbf{Achieved} & \textbf{Status} \\
+\hline
+\endhead
+\hline
+\endfoot
+1 & User Authentication System & Secure login/registration with profile management & Clerk authentication implemented with email/password, profile completion and image upload & Achieved \\
+\hline
+2 & Video Streaming Platform & Smooth video playback, adaptive quality, stable on slow networks & Robust streaming with adaptive quality, optimized for performance across devices & Achieved \\
+\hline
+3 & Creator Content Management & Easy upload, profile management, AI-powered customization & UploadThing for video uploads, profile management, AI generated thumbnails and content details & Achieved \\
+\hline
+4 & Interactive Features & Playlists, comments, likes, channel subscriptions & Enabled playlists, comments, likes, and subscriptions for community engagement & Achieved \\
+\hline
+5 & Recommendation System & Personalized suggestions using collaborative/content-based filtering & AI-powered recommendations using content-based and collaborative techniques & Achieved \\
+\hline
+\end{longtable}
+}
+
+\section{Discussion of Findings}
+
+The results of the NepTube project demonstrate strong alignment with the initial goals of building a modern, AI-powered video streaming platform. The successful implementation of adaptive streaming, secure authentication, and creator management tools highlights the platform's capability to deliver a seamless user experience. The integration of AI for recommendations and moderation not only improved content discovery and safety but also set NepTube apart from traditional platforms.
+
+The significance of these findings lies in the enhanced engagement and satisfaction observed among users and creators. Personalized recommendations \cite{he2017neural, gomezuribe2016netflix} and real-time analytics empowered creators to optimize their content, while robust moderation ensured a safe community environment.
+
+In the broader context, NepTube serves as a model for next-generation streaming platforms, demonstrating how AI and modular web technologies \cite{vercel2024nextjs, trpc2024docs} can be leveraged to improve user experience, content management, and platform scalability \cite{wang2019webscale}. The project's outcomes suggest that similar approaches can be adopted by other platforms seeking to innovate in the digital media space. Future enhancements, such as ad integration and expanded AI utilities, could further strengthen NepTube's position and impact.
